@@ -72,10 +72,11 @@ USER_DATA = []
 
 
 async def add_task(update, context):
-    locality = context.args[0]
+    locality = context.args
+    locality1 = ' '.join(locality)
     await update.message.reply_text(
-        f"Добавлена задача: {locality}")
-    USER_DATA.append(locality)
+        f"Добавлена задача: {locality1}")
+    USER_DATA.append(locality1)
 
 
 async def all_tasks(update, context):
